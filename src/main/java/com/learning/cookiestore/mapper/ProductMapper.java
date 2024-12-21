@@ -9,8 +9,9 @@ public interface ProductMapper {
 	// 상품 등록
 	int save(ProductVO productVO);
 
-	// 상품 조회
+	// 상품 조회 (상품 번호)
 	ProductVO findProductByProductNumber(Integer productNumber);
+	// 상품 조회 (상품 이름)
 	ProductVO findProductByProductName(String productName);
 
 	// 상품 수정

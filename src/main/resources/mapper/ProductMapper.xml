@@ -12,4 +12,26 @@
 	VALUES (#{productNumber}, #{productName}, #{productPrice})
 </insert>
 
+<!-- 상품 조회 (상품 번호) -->
+<select id="findProductByProductNumber" resultType="com.learning.cookiestore.vo.ProductVO">
+	SELECT
+		product_name AS productName,
+		product_price AS productPrice
+	FROM product
+	WHERE product_number = #{productNumber}
+</select>
+
+<!-- 상품 조회 (상품 이름) -->
+<select id="findProductByProductName" resultType="com.learning.cookiestore.vo.ProductVO">
+	SELECT 
+		product_name AS productName,
+		product_price AS productPrice
+	FROM product
+	<where>
+		<if test="productName != null">
+			product_name LIKE CONCAT('%', #{productName}, '%')
+		</if>
+	</where>
+</select>
+
 </mapper>

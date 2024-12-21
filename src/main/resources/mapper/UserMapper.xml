@@ -19,7 +19,7 @@
 		name,
 		email
 	FROM user
-	WHERE user_id = #{user_id}
+	WHERE user_id = #{userId}
 </select>
 
 <!-- 유저 수정 (기본 정보) -->
@@ -29,7 +29,7 @@
 		user_id = #{userId},
 		name = #{name},
 		email = #{email}
-	WHERE user_id = #{user_id}
+	WHERE user_id = #{userId}
 </update>
 
 <!-- 유저 수정 (비밀번호) -->
@@ -37,14 +37,14 @@
 	UPDATE user
 	SET
 		password = #{password}
-	WHERE user_id = #{user_id}
+	WHERE user_id = #{userId}
 </update>
 
 <!-- 유저 삭제 -->
 <delete id="deleteUserByUserId">
 	DELETE
 	FROM user
-	WHERE user_id = #{user_id}
+	WHERE user_id = #{userId}
 </delete>
 
 </mapper>
