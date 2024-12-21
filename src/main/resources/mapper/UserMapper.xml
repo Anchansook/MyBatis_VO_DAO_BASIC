@@ -22,12 +22,22 @@
 	WHERE user_id = #{user_id}
 </select>
 
-<!-- 유저 수정 -->
-<update id="updateUserByUserId">
+<!-- 유저 수정 (기본 정보) -->
+<update id="updateUserInfoByUserId">
 	UPDATE user
 	SET
 		user_id = #{userId},
+		name = #{name},
+		email = #{email}
+	WHERE user_id = #{user_id}
+</update>
 
+<!-- 유저 수정 (비밀번호) -->
+<update id="updateUserPasswordByUserId">
+	UPDATE user
+	SET
+		password = #{password}
+	WHERE user_id = #{user_id}
 </update>
 
 </mapper>

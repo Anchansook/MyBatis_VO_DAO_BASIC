@@ -16,8 +16,11 @@ public interface UserMapper {
 	// 유저 조회
 	UserVO findUserByUserId(String userId);
 
-	// 유저 수정
-	int updateUserByUserId(UserVO userVO);
+	// 유저 수정 (기본 수정)
+	int updateUserInfoByUserId(UserVO userVO);
+
+	// 유저 수정 (비밀번호)
+	int updateUserPasswordByUserId(UserVO userVO);
 
 	// 유저 삭제
 	int deleteUserByUserId(String userId);
