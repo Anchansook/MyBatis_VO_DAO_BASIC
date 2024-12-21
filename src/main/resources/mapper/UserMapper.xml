@@ -8,7 +8,7 @@
 <mapper namespace="com.learning.cookiestore.mapper.UserMapper">
 <!-- 유저 생성 -->
 <insert id="save" parameterType="com.learning.cookiestore.vo.UserVO">
-	INSERT INTO user
+	INSERT INTO user <!-- 전체 테이블 컬럼 다 넣을거라 생략. 아니라면 -> (userId,...) -->
 	VALUES (#{userId}, #{password}, #{name}, #{email})
 </insert>
 
@@ -21,5 +21,13 @@
 	FROM user
 	WHERE user_id = #{user_id}
 </select>
+
+<!-- 유저 수정 -->
+<update id="updateUserByUserId">
+	UPDATE user
+	SET
+		user_id = #{userId},
+
+</update>
 
 </mapper>
