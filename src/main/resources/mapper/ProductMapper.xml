@@ -34,4 +34,13 @@
 	</where>
 </select>
 
+<!-- 상품 수정 -->
+<update id="updateProductByProductNumber">
+	UPDATE product
+	SET
+		product_name = #{productName},
+		product_price = #{productPrice}
+	WHERE product_number = #{productNumber}
+</update>
+
 </mapper>
