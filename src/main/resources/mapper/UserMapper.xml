@@ -40,4 +40,11 @@
 	WHERE user_id = #{user_id}
 </update>
 
+<!-- 유저 삭제 -->
+<delete id="deleteUserByUserId">
+	DELETE
+	FROM user
+	WHERE user_id = #{user_id}
+</delete>
+
 </mapper>
