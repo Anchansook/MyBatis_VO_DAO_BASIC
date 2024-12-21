@@ -43,4 +43,11 @@
 	WHERE product_number = #{productNumber}
 </update>
 
+<!-- 상품 삭제 -->
+<delete id="deleteProductByProductNumber">
+	DELETE
+	FROM product
+	WHERE product_number = #{productNumber}
+</delete>
+
 </mapper>
