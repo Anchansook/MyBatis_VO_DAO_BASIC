@@ -36,6 +36,9 @@
 
 <!-- 주문 삭제 -->
 <delete id="deleteOrderByOrderCode">
+	DELETE
+	FROM orders
+	WHERE order_code = #{orderCode}
 </delete>
 
 </mapper>
