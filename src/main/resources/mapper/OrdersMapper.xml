@@ -6,6 +6,14 @@
 >
 
 <mapper namespace="com.learning.cookiestore.mapper.OrderMapper">
+<!-- 주문 내역 조회를 위한 resultMap (상품 테이블이랑 조인) -->
+<resultMap id="selectOrdersProductsResultMap" type="com.learning.cookiestore.vo.SelectOrdersProductsVO">
+	<result property="productName" column="product_name" />
+	<result property="productCount" column="product_count" />
+	<result property="totalPrice" column="total_price" />
+	<result property="orderDate" column="order_date" />
+</resultMap>
+
 <!-- 주문 생성 -->
 <insert id="save" parameterType="com.learning.cookiestore.vo.OrderVO">
 	INSERT INTO orders
@@ -14,7 +22,7 @@
 </insert>
 
 <!-- 주문 내역 조회 (상품 테이블이랑 조인) -->
-<select id="findOrderByOrderCode">
+<select id="findOrderByOrderCode" resultType="selectOrdersProductsResultMap">
 	SELECT 
 		p.product_name AS productName,
 		o.product_count AS productCount,
@@ -25,5 +33,9 @@
 		ON o.product_number = p.product_number
 	WHERE o.order_code = #{orderCode}
 </select>
+
+<!-- 주문 삭제 -->
+<delete id="deleteOrderByOrderCode">
+</delete>
 
 </mapper>
