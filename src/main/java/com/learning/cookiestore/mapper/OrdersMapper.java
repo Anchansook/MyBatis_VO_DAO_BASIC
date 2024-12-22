@@ -2,15 +2,15 @@ package com.learning.cookiestore.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.learning.cookiestore.vo.OrderVO;
+import com.learning.cookiestore.vo.OrdersVO;
 
 @Mapper
-public interface OrderMapper {
+public interface OrdersMapper {
 	// 주문 생성
-	int save(OrderVO orderVO);
+	int save(OrdersVO orderVO);
 
 	// 주문 내역 조회
-	OrderVO findOrderByOrderCode(Integer orderCode);
+	OrdersVO findOrderByOrderCode(Integer orderCode);
 
 	// 주문 삭제
 	int deleteOrderByOrderCode(Integer orderCode);

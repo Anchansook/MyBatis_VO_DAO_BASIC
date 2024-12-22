@@ -8,7 +8,7 @@
 <mapper namespace="com.learning.cookiestore.mapper.OrderMapper">
 <!-- 주문 생성 -->
 <insert id="save" parameterType="com.learning.cookiestore.vo.OrderVO">
-	INSERT INTO order
+	INSERT INTO orders
 	VALUES (#{orderCode}, #{userId}, #{productNumber}, #{productCount}, 
 			#{totalPrice}, #{orderDate})
 </insert>

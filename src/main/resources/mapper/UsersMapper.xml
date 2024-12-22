@@ -8,7 +8,7 @@
 <mapper namespace="com.learning.cookiestore.mapper.UserMapper">
 <!-- 유저 생성 -->
 <insert id="save" parameterType="com.learning.cookiestore.vo.UserVO">
-	INSERT INTO user <!-- 전체 테이블 컬럼 다 넣을거라 생략. 아니라면 -> (userId,...) -->
+	INSERT INTO users <!-- 전체 테이블 컬럼 다 넣을거라 생략. 아니라면 -> (userId,...) -->
 	VALUES (#{userId}, #{password}, #{name}, #{email})
 </insert>
 
@@ -24,7 +24,7 @@
 
 <!-- 유저 수정 (기본 정보) -->
 <update id="updateUserInfoByUserId">
-	UPDATE user
+	UPDATE users
 	SET
 		user_id = #{userId},
 		name = #{name},
@@ -34,7 +34,7 @@
 
 <!-- 유저 수정 (비밀번호) -->
 <update id="updateUserPasswordByUserId">
-	UPDATE user
+	UPDATE users
 	SET
 		password = #{password}
 	WHERE user_id = #{userId}
@@ -43,7 +43,7 @@
 <!-- 유저 삭제 -->
 <delete id="deleteUserByUserId">
 	DELETE
-	FROM user
+	FROM users
 	WHERE user_id = #{userId}
 </delete>
 

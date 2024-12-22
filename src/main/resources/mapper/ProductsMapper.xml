@@ -8,7 +8,7 @@
 <mapper namespace="com.learning.cookiestore.mapper.ProductMapper">
 <!-- 상품 등록 -->
 <insert id="save" parameterType="com.learning.cookiestore.vo.ProductVO">
-	INSERT INTO product
+	INSERT INTO products
 	VALUES (#{productNumber}, #{productName}, #{productPrice})
 </insert>
 
@@ -17,7 +17,7 @@
 	SELECT
 		product_name AS productName,
 		product_price AS productPrice
-	FROM product
+	FROM products
 	WHERE product_number = #{productNumber}
 </select>
 
@@ -26,7 +26,7 @@
 	SELECT 
 		product_name AS productName,
 		product_price AS productPrice
-	FROM product
+	FROM products
 	<where>
 		<if test="productName != null">
 			product_name LIKE CONCAT('%', #{productName}, '%')
@@ -36,7 +36,7 @@
 
 <!-- 상품 수정 -->
 <update id="updateProductByProductNumber">
-	UPDATE product
+	UPDATE products
 	SET
 		product_name = #{productName},
 		product_price = #{productPrice}
@@ -46,7 +46,7 @@
 <!-- 상품 삭제 -->
 <delete id="deleteProductByProductNumber">
 	DELETE
-	FROM product
+	FROM products
 	WHERE product_number = #{productNumber}
 </delete>
 
