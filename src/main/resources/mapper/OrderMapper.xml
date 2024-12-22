@@ -13,4 +13,14 @@
 			#{totalPrice}, #{orderDate})
 </insert>
 
+<!-- 주문 내역 조회 (상품이랑 조인) -->
+<select id="findOrderByOrderCode">
+	SELECT 
+		product_name AS productName,
+		product_count AS productCount,
+		total_price AS totalPrice
+		order_date AS orderDate
+	
+</select>
+
 </mapper>
