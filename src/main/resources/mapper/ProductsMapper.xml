@@ -6,7 +6,7 @@
 >
 
 <mapper namespace="com.learning.cookiestore.mapper.ProductMapper">
-<!-- 상품 등록 -->
+<!-- 상품 등록 (상품 번호는 auto_increment이므로 생략) -->
 <insert id="save" parameterType="com.learning.cookiestore.vo.ProductVO">
 	INSERT INTO products (product_name, product_price)
 	VALUES (#{productName}, #{productPrice})

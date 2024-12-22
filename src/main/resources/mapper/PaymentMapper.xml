@@ -6,10 +6,10 @@
 >
 
 <mapper namespace="com.learning.cookiestore.mapper.PaymentMapper">
-<!-- 결제 생성 -->
+<!-- 결제 생성 (결제 번호는 auto_increment이므로 생략) -->
 <insert id="save" parameterType="com.learning.cookiestore.vo.PaymentVO">
-	INSERT INTO payment
-	VALUES (#{paymentNumber})
+	INSERT INTO payment (order_code, user_id, paid_amount)
+	VALUES (#{orderCode}, #{userId}, #{paidAmount})
 </insert>
 
 </mapper>
