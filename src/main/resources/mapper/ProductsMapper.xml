@@ -8,8 +8,8 @@
 <mapper namespace="com.learning.cookiestore.mapper.ProductMapper">
 <!-- 상품 등록 -->
 <insert id="save" parameterType="com.learning.cookiestore.vo.ProductVO">
-	INSERT INTO products
-	VALUES (#{productNumber}, #{productName}, #{productPrice})
+	INSERT INTO products (product_name, product_price)
+	VALUES (#{productName}, #{productPrice})
 </insert>
 
 <!-- 상품 조회 (상품 번호) -->
