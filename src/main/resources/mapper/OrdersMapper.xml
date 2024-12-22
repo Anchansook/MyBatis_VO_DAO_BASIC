@@ -13,14 +13,17 @@
 			#{totalPrice}, #{orderDate})
 </insert>
 
-<!-- 주문 내역 조회 (상품이랑 조인) -->
+<!-- 주문 내역 조회 (상품 테이블이랑 조인) -->
 <select id="findOrderByOrderCode">
 	SELECT 
-		product_name AS productName,
-		product_count AS productCount,
-		total_price AS totalPrice
-		order_date AS orderDate
-	
+		p.product_name AS productName,
+		o.product_count AS productCount,
+		o.total_price AS totalPrice,
+		o.order_date AS orderDate
+	FROM orders o
+	LEFT OUTER JOIN products p
+		ON o.product_number = p.product_number
+	WHERE o.order_code = #{orderCode}
 </select>
 
 </mapper>
