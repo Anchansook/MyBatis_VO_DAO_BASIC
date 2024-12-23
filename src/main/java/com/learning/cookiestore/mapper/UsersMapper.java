@@ -24,6 +24,9 @@ public interface UsersMapper {
 
 	// 유저 삭제
 	int deleteUserByUserId(String userId);
+
+	// 회원가입 - 아이디 중복 확인
+	boolean existsByUserId(String userId);
 	
 }
 

@@ -7,7 +7,7 @@ import com.learning.cookiestore.vo.UsersVO;
 // 예시를 위해 UserDAO만 작성
 
 @Mapper
-public interface UserDAO {
+public interface UsersDAO {
 	// 유저 생성
 	int save(UsersVO userVO);
 
