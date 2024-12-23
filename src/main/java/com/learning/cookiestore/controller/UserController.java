@@ -24,5 +24,14 @@ public class UserController {
 		ResponseDto response = userService.idCheck(userId);
 		return response;
 	}
+
+	// 회원가입 - 이메일 중복 확인
+	@PostMapping("/email-check")
+	public ResponseDto emailCheck(
+		@RequestBody String email
+	) {
+		ResponseDto response = userService.emailCheck(email);
+		return response;
+	}
 	
 }

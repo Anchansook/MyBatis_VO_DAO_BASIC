@@ -10,7 +10,7 @@ import com.learning.cookiestore.vo.UsersVO;
 
 @Mapper
 public interface UsersMapper {
-	// 유저 생성
+	// 유저 생성 (회원가입)
 	int save(UsersVO usersVO);
 
 	// 유저 조회
@@ -27,6 +27,9 @@ public interface UsersMapper {
 
 	// 회원가입 - 아이디 중복 확인
 	boolean existsByUserId(String userId);
+
+	// 회원가입 - 이메일 중복 확인
+	boolean existsByEmail(String email);
 	
 }
 
