@@ -5,15 +5,15 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"
 >
 
-<mapper namespace="com.learning.cookiestore.mapper.ProductMapper">
+<mapper namespace="com.learning.cookiestore.mapper.ProductsMapper">
 <!-- 상품 등록 (상품 번호는 auto_increment이므로 생략) -->
-<insert id="save" parameterType="com.learning.cookiestore.vo.ProductVO">
+<insert id="save" parameterType="com.learning.cookiestore.vo.ProductsVO">
 	INSERT INTO products (product_name, product_price)
 	VALUES (#{productName}, #{productPrice})
 </insert>
 
 <!-- 상품 조회 (상품 번호) -->
-<select id="findProductByProductNumber" resultType="com.learning.cookiestore.vo.ProductVO">
+<select id="findProductByProductNumber" resultType="com.learning.cookiestore.vo.ProductsVO">
 	SELECT
 		product_name AS productName,
 		product_price AS productPrice
@@ -22,7 +22,7 @@
 </select>
 
 <!-- 상품 조회 (상품 이름) -->
-<select id="findProductByProductName" resultType="com.learning.cookiestore.vo.ProductVO">
+<select id="findProductByProductName" resultType="com.learning.cookiestore.vo.ProductsVO">
 	SELECT 
 		product_name AS productName,
 		product_price AS productPrice

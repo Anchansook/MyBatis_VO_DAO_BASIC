@@ -9,7 +9,7 @@ import com.learning.cookiestore.vo.UsersVO;
 @Mapper
 public interface UsersDAO {
 	// 유저 생성
-	int save(UsersVO userVO);
+	int save(UsersVO usersVO);
 
 	// 유저 조회
 	UsersVO findUserByUserId(String userId);

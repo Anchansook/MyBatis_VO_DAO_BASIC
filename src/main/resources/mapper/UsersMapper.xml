@@ -5,15 +5,15 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"
 >
 
-<mapper namespace="com.learning.cookiestore.mapper.UserMapper">
+<mapper namespace="com.learning.cookiestore.mapper.UsersMapper">
 <!-- 유저 생성 -->
-<insert id="save" parameterType="com.learning.cookiestore.vo.UserVO">
+<insert id="save" parameterType="com.learning.cookiestore.vo.UsersVO">
 	INSERT INTO users <!-- 전체 테이블 컬럼 다 넣을거라 생략. 아니라면 -> (userId,...) -->
 	VALUES (#{userId}, #{password}, #{name}, #{email})
 </insert>
 
 <!-- 유저 조회 -->
-<select id="findUserByUserId" resultType="com.learning.cookiestore.vo.UserVO">
+<select id="findUserByUserId" resultType="com.learning.cookiestore.vo.UsersVO">
 	SELECT
 		user_id AS userId,
 		name,

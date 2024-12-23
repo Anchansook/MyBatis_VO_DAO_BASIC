@@ -7,7 +7,7 @@ import com.learning.cookiestore.vo.ProductsVO;
 @Mapper
 public interface ProductsMapper {
 	// 상품 등록
-	int save(ProductsVO productVO);
+	int save(ProductsVO productsVO);
 
 	// 상품 조회 (상품 번호)
 	ProductsVO findProductByProductNumber(Integer productNumber);

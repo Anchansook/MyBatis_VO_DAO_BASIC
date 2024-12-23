@@ -11,16 +11,16 @@ import com.learning.cookiestore.vo.UsersVO;
 @Mapper
 public interface UsersMapper {
 	// 유저 생성
-	int save(UsersVO userVO);
+	int save(UsersVO usersVO);
 
 	// 유저 조회
 	UsersVO findUserByUserId(String userId);
 
 	// 유저 수정 (기본 수정)
-	int updateUserInfoByUserId(UsersVO userVO);
+	int updateUserInfoByUserId(UsersVO usersVO);
 
 	// 유저 수정 (비밀번호)
-	int updateUserPasswordByUserId(UsersVO userVO);
+	int updateUserPasswordByUserId(UsersVO usersVO);
 
 	// 유저 삭제
 	int deleteUserByUserId(String userId);

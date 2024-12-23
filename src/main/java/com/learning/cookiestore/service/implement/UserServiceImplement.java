@@ -1,13 +1,11 @@
 package com.learning.cookiestore.service.implement;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.learning.cookiestore.exception.CustomException;
 import com.learning.cookiestore.exception.ResponseDto;
 import com.learning.cookiestore.mapper.UsersMapper;
 import com.learning.cookiestore.service.UserService;
-import com.learning.cookiestore.vo.UsersVO;
 
 import lombok.RequiredArgsConstructor;
 
