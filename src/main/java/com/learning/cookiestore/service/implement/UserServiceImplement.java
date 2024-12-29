@@ -6,7 +6,6 @@ import com.learning.cookiestore.exception.CustomException;
 import com.learning.cookiestore.exception.ResponseDto;
 import com.learning.cookiestore.mapper.UsersMapper;
 import com.learning.cookiestore.service.UserService;
-import com.learning.cookiestore.vo.UsersVO;
 
 import lombok.RequiredArgsConstructor;
 
